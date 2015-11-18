@@ -1,0 +1,64 @@
+{
+	"$schema": "http://xcdl.github.io/schemas/xpack-1-1.json",
+	"name": "/ilg/toolchain",
+	"description": "Toolchain definitions.",
+	"repository": 
+	{
+		"type": "git",
+		"url": "https://github.com/xpacks/toolchains.git"
+	},
+
+	"releases": [
+		{
+			"version": "1.1.1",
+			"description": "Initial release.",
+			"archives": [
+				"http://gnuarmeclipse.sourceforge.net/xpacks/toolchains/1.1.1.zip",
+				"https://github.com/xpacks/stm32/archive/1.1.1.zip"
+			],
+
+			"repository": 
+			{
+				"tag": "1.1.1"
+			}
+		}
+	],
+
+	"keywords": [
+		"toolchain",
+		"gnu",
+		"gcc",
+		"llvm",
+		"clang",
+		"c",
+		"c++"
+	],
+
+	"homepage": "https://github.com/xpacks/toolchains",
+	"bugs": [
+		{
+			"url": "https://github.com/xpacks/toolchains/issues"
+		}
+	],
+
+	"license": "GPL-3.0",
+	"maintainers": [
+		{
+			"name": "Liviu Ionescu",
+			"email": "ilg@livius.net",
+			"url": "http://liviusdotnet.worldpress.com"
+		}
+	],
+
+	"contributors": [
+		{
+			"name": "Liviu Ionescu",
+			"email": "ilg@livius.net",
+			"url": "http://liviusdotnet.worldpress.com"
+		}
+	],
+
+	"dependencies": [
+		
+	]
+}

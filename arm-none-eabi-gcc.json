@@ -1,0 +1,78 @@
+{
+	"$schema": "http://xcdl.github.io/schemas/xcdl-1-1.json",
+	"nodes": [
+		{
+			"name": "arm-none-eabi",
+			"type": "toolchain",
+			"subType": "base",
+			"description": "GNU ARM Embedded GCC Base",
+			"platform": "*",
+			"tools": [
+				{
+					"name": "cc",
+					"type": "compiler",
+					"subtype": "c",
+					"description": "GNU ARM Embedded GCC"
+				},
+
+				{
+					"name": "cpp",
+					"type": "compiler",
+					"subtype": "c++",
+					"description": "GNU ARM Embedded G++"
+				},
+
+				{
+					"name": "asm",
+					"type": "compiler",
+					"subtype": "asm",
+					"description": "GNU ARM Embedded GCC"
+				},
+
+				{
+					"name": "ld",
+					"type": "linker",
+					"subtype": "c",
+					"description": "GNU ARM Embedded GCC Linker"
+				},
+
+				{
+					"name": "ldpp",
+					"type": "linker",
+					"subtype": "c++",
+					"description": "GNU ARM Embedded G++ Linker"
+				}
+			],
+
+			"nodes": [
+				{
+					"name": "debug",
+					"type": "toolchain",
+					"subType": "debug",
+					"description": "GNU ARM Embedded GCC Debug",
+					"compiler": 
+					{
+						"options": 
+						{
+							"optimisation": "-Og"
+						}
+					}
+				},
+
+				{
+					"name": "release",
+					"type": "toolchain",
+					"subType": "release",
+					"description": "GNU ARM Embedded GCC Release",
+					"compiler": 
+					{
+						"options": 
+						{
+							"optimisation": "-Os"
+						}
+					}
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,132 @@
+{
+	"$schema": "http://xcdl.github.io/schemas/xcdl-1-1.json",
+	"nodes": [
+		{
+			"name": "osx",
+			"type": "toolchain",
+			"subType": "base",
+			"description": "OS X Apple LLVM Clang Base",
+			"platform": "Darwin",
+			"tools": [
+				{
+					"name": "cc",
+					"type": "compiler",
+					"subtype": "c",
+					"description": "Apple LLVM Clang"
+				},
+
+				{
+					"name": "cpp",
+					"type": "compiler",
+					"subtype": "c++",
+					"description": "Apple LLVM Clang++"
+				},
+
+				{
+					"name": "asm",
+					"type": "compiler",
+					"subtype": "asm",
+					"description": "Apple LLVM Clang"
+				},
+
+				{
+					"name": "ld",
+					"type": "linker",
+					"subtype": "c",
+					"description": "Apple LLVM Clang Linker"
+				},
+
+				{
+					"name": "ldpp",
+					"type": "linker",
+					"subtype": "cpp",
+					"description": "Apple LLVM Clang++ Linker"
+				}
+			],
+
+			"nodes": [
+				{
+					"name": "32",
+					"type": "toolchain",
+					"subType": "base",
+					"description": "OS X Apple LLVM i386 Base",
+					"compiler": 
+					{
+						"cpu": "-m32"
+					},
+
+					"nodes": [
+						{
+							"name": "debug",
+							"type": "toolchain",
+							"subType": "debug",
+							"description": "OS X Apple LLVM i386 Debug",
+							"compiler": 
+							{
+								"options": 
+								{
+									"optimisation": "-O0"
+								}
+							}
+						},
+
+						{
+							"name": "release",
+							"type": "toolchain",
+							"subType": "release",
+							"description": "OS X Apple LLVM i386 Release",
+							"compiler": 
+							{
+								"options": 
+								{
+									"optimisation": "-O3"
+								}
+							}
+						}
+					]
+				},
+
+				{
+					"name": "64",
+					"type": "toolchain",
+					"subType": "base",
+					"description": "OS X Apple LLVM x86_64 Base",
+					"compiler": 
+					{
+						"cpu": "-m64"
+					},
+
+					"nodes": [
+						{
+							"name": "debug",
+							"type": "toolchain",
+							"subType": "debug",
+							"description": "OS X Apple LLVM x86_64 Debug",
+							"compiler": 
+							{
+								"options": 
+								{
+									"optimisation": "-O0"
+								}
+							}
+						},
+
+						{
+							"name": "release",
+							"type": "toolchain",
+							"subType": "release",
+							"description": "OS X Apple LLVM x86_64 Release",
+							"compiler": 
+							{
+								"options": 
+								{
+									"optimisation": "-O3"
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,214 @@
+{
+	"$schema": "http://xcdl.github.io/schemas/xcdl-1-1.json",
+	"nodes": [
+		{
+			"name": "aarch64",
+			"type": "toolchain",
+			"subType": "base",
+			"description": "Linaro AArch64 GCC Base",
+			"platform": "*",
+			"tools": [
+				{
+					"name": "cc",
+					"type": "compiler",
+					"subtype": "c",
+					"description": "Linaro AArch64 GCC"
+				},
+
+				{
+					"name": "cpp",
+					"type": "compiler",
+					"subtype": "c++",
+					"description": "Linaro AArch64 G++"
+				},
+
+				{
+					"name": "asm",
+					"type": "compiler",
+					"subtype": "asm",
+					"description": "Linaro AArch64 GCC"
+				},
+
+				{
+					"name": "ld",
+					"type": "linker",
+					"subtype": "c",
+					"description": "Linaro AArch64 GCC Linker"
+				},
+
+				{
+					"name": "ldpp",
+					"type": "linker",
+					"subtype": "c++",
+					"description": "Linaro AArch64 G++ Linker"
+				}
+			],
+
+			"nodes": [
+				{
+					"name": "aarch64-none-elf",
+					"type": "toolchain",
+					"subType": "base",
+					"description": "Linaro AArch64 bare-metal ELF GCC Base",
+					"substitutions": 
+					{
+						"prefix": "aarch64-none-elf-"
+					},
+
+					"nodes": [
+						{
+							"name": "debug",
+							"type": "toolchain",
+							"subType": "debug",
+							"description": "Linaro AArch64 bare-metal ELF Debug",
+							"compiler": 
+							{
+								"options": 
+								{
+									"optimisation": "-Og"
+								}
+							}
+						},
+
+						{
+							"name": "release",
+							"type": "toolchain",
+							"subType": "release",
+							"description": "Linaro AArch64 bare-metal ELF Release",
+							"compiler": 
+							{
+								"options": 
+								{
+									"optimisation": "-Os"
+								}
+							}
+						}
+					]
+				},
+
+				{
+					"name": "aarch64_be-none-elf",
+					"type": "toolchain",
+					"subType": "base",
+					"description": "Linaro AArch64 big-endian bare-metal ELF GCC Base",
+					"substitutions": 
+					{
+						"prefix": "aarch64_be-none-elf-"
+					},
+
+					"nodes": [
+						{
+							"name": "debug",
+							"type": "toolchain",
+							"subType": "debug",
+							"description": "Linaro AArch64 big-endian bare-metal ELF Debug",
+							"compiler": 
+							{
+								"options": 
+								{
+									"optimisation": "-Og"
+								}
+							}
+						},
+
+						{
+							"name": "release",
+							"type": "toolchain",
+							"subType": "release",
+							"description": "Linaro AArch64 big-endian bare-metal ELF Release",
+							"compiler": 
+							{
+								"options": 
+								{
+									"optimisation": "-Os"
+								}
+							}
+						}
+					]
+				},
+
+				{
+					"name": "aarch64-linux-gnu",
+					"type": "toolchain",
+					"subType": "base",
+					"description": "Linaro AArch64 Linux GNU GCC Base",
+					"substitutions": 
+					{
+						"prefix": "aarch64-linux-gnu-"
+					},
+
+					"nodes": [
+						{
+							"name": "debug",
+							"type": "toolchain",
+							"subType": "debug",
+							"description": "Linaro AArch64 Linux GNU Debug",
+							"compiler": 
+							{
+								"options": 
+								{
+									"optimisation": "-Og"
+								}
+							}
+						},
+
+						{
+							"name": "release",
+							"type": "toolchain",
+							"subType": "release",
+							"description": "Linaro AArch64 Linux GNU Release",
+							"compiler": 
+							{
+								"options": 
+								{
+									"optimisation": "-O3"
+								}
+							}
+						}
+					]
+				},
+
+				{
+					"name": "aarch64_be-linux-gnu",
+					"type": "toolchain",
+					"subType": "base",
+					"description": "Linaro AArch64 big-endian Linux GNU GCC Base",
+					"substitutions": 
+					{
+						"prefix": "aarch64_be-linux-gnu-"
+					},
+
+					"nodes": [
+						{
+							"name": "debug",
+							"type": "toolchain",
+							"subType": "debug",
+							"description": "Linaro AArch64 big-endian Linux GNU Debug",
+							"compiler": 
+							{
+								"options": 
+								{
+									"optimisation": "-Og"
+								}
+							}
+						},
+
+						{
+							"name": "release",
+							"type": "toolchain",
+							"subType": "release",
+							"description": "Linaro AArch64 big-endian Linux GNU Release",
+							"compiler": 
+							{
+								"options": 
+								{
+									"optimisation": "-O3"
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

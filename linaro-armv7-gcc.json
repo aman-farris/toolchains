@@ -1,0 +1,214 @@
+{
+	"$schema": "http://xcdl.github.io/schemas/xcdl-1-1.json",
+	"nodes": [
+		{
+			"name": "armv7",
+			"type": "toolchain",
+			"subType": "base",
+			"description": "Linaro ARMv7 GCC Base",
+			"platform": "*",
+			"tools": [
+				{
+					"name": "cc",
+					"type": "compiler",
+					"subtype": "c",
+					"description": "Linaro ARMv7 GCC"
+				},
+
+				{
+					"name": "cpp",
+					"type": "compiler",
+					"subtype": "c++",
+					"description": "Linaro ARMv7 G++"
+				},
+
+				{
+					"name": "asm",
+					"type": "compiler",
+					"subtype": "asm",
+					"description": "Linaro ARMv7 GCC"
+				},
+
+				{
+					"name": "ld",
+					"type": "linker",
+					"subtype": "c",
+					"description": "Linaro ARMv7 GCC Linker"
+				},
+
+				{
+					"name": "ldpp",
+					"type": "linker",
+					"subtype": "c++",
+					"description": "Linaro ARMv7 G++ Linker"
+				}
+			],
+
+			"nodes": [
+				{
+					"name": "arm-none-eabi",
+					"type": "toolchain",
+					"subType": "base",
+					"description": "Linaro ARMv7 bare-metal EABI GCC Base",
+					"substitutions": 
+					{
+						"prefix": "arm-none-eabi-"
+					},
+
+					"nodes": [
+						{
+							"name": "debug",
+							"type": "toolchain",
+							"subType": "debug",
+							"description": "Linaro ARMv7 bare-metal EABI Debug",
+							"compiler": 
+							{
+								"options": 
+								{
+									"optimisation": "-Og"
+								}
+							}
+						},
+
+						{
+							"name": "release",
+							"type": "toolchain",
+							"subType": "release",
+							"description": "Linaro ARMv7 bare-metal EABI Release",
+							"compiler": 
+							{
+								"options": 
+								{
+									"optimisation": "-Os"
+								}
+							}
+						}
+					]
+				},
+
+				{
+					"name": "armeb-none-eabi",
+					"type": "toolchain",
+					"subType": "base",
+					"description": "Linaro ARMv7 big-endian bare-metal EABI GCC Base",
+					"substitutions": 
+					{
+						"prefix": "armeb-none-eabi-"
+					},
+
+					"nodes": [
+						{
+							"name": "debug",
+							"type": "toolchain",
+							"subType": "debug",
+							"description": "Linaro ARMv7 big-endian bare-metal EABI Debug",
+							"compiler": 
+							{
+								"options": 
+								{
+									"optimisation": "-Og"
+								}
+							}
+						},
+
+						{
+							"name": "release",
+							"type": "toolchain",
+							"subType": "release",
+							"description": "Linaro ARMv7 big-endian bare-metal EABI Release",
+							"compiler": 
+							{
+								"options": 
+								{
+									"optimisation": "-Os"
+								}
+							}
+						}
+					]
+				},
+
+				{
+					"name": "arm-linux-gnueabihf",
+					"type": "toolchain",
+					"subType": "base",
+					"description": "Linaro ARMv7 Linux GNU EABI HF GCC Base",
+					"substitutions": 
+					{
+						"prefix": "arm-linux-gnueabihf-"
+					},
+
+					"nodes": [
+						{
+							"name": "debug",
+							"type": "toolchain",
+							"subType": "debug",
+							"description": "Linaro ARMv7 Linux GNU EABI HF Debug",
+							"compiler": 
+							{
+								"options": 
+								{
+									"optimisation": "-Og"
+								}
+							}
+						},
+
+						{
+							"name": "release",
+							"type": "toolchain",
+							"subType": "release",
+							"description": "Linaro ARMv7 Linux GNU EABI HF Release",
+							"compiler": 
+							{
+								"options": 
+								{
+									"optimisation": "-O3"
+								}
+							}
+						}
+					]
+				},
+
+				{
+					"name": "armeb-linux-gnueabihf",
+					"type": "toolchain",
+					"subType": "base",
+					"description": "Linaro ARMv7 big-endian Linux GNU EABI HF GCC Base",
+					"substitutions": 
+					{
+						"prefix": "armeb-linux-gnueabihf-"
+					},
+
+					"nodes": [
+						{
+							"name": "debug",
+							"type": "toolchain",
+							"subType": "debug",
+							"description": "Linaro ARMv7 big-endian Linux GNU EABI HF Debug",
+							"compiler": 
+							{
+								"options": 
+								{
+									"optimisation": "-Og"
+								}
+							}
+						},
+
+						{
+							"name": "release",
+							"type": "toolchain",
+							"subType": "release",
+							"description": "Linaro ARMv7 big-endian Linux GNU EABI HF Release",
+							"compiler": 
+							{
+								"options": 
+								{
+									"optimisation": "-O3"
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

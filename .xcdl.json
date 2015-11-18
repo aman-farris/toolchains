@@ -1,0 +1,222 @@
+{
+	"$schema": "http://xcdl.github.io/schemas/xcdl-1-1.json",
+	"nodes": [
+		{
+			"name": "gcc",
+			"type": "toolchain",
+			"subType": "base",
+			"description": "GCC Base",
+			"platform": "*",
+			"compiler": 
+			{
+				"fileExtentions": [
+					{
+						"object": "o"
+					}
+				],
+
+				"options": 
+				{
+					"deps": "-MMD -MP",
+					"output": "-o \"$@\"",
+					"input": "\"$<\"",
+					"warning": "-Wall -Wextra -Werror -Wabi",
+					"other": "-fsigned-char -fsigned-bitfields -fmessage-length=0 -c -ffunction-sections -fdata-sections",
+					"preprocessor": "",
+					"debug": "-g",
+					"optimisation": "-O"
+				}
+			},
+
+			"linker": 
+			{
+				"options": 
+				{
+					"other": "-Wl,--gc-sections -Wl,-Map,map.txt -Wl,--cref -nostartfiles"
+				}
+			},
+
+			"make": 
+			{
+				"variables": 
+				{
+					"objects": "OBJS"
+				}
+			},
+
+			"tools": [
+				{
+					"name": "cc",
+					"type": "compiler",
+					"subtype": "c",
+					"description": "GCC",
+					"programName": "${prefix}gcc${suffix}",
+					"standard": "-std=gnu99",
+					"options": ""
+				},
+
+				{
+					"name": "cpp",
+					"type": "compiler",
+					"subtype": "c++",
+					"description": "G++",
+					"programName": "${prefix}g++${suffix}",
+					"standard": "-std=c++11",
+					"options": "-Wabi -fno-use-cxa-atexit -fno-threadsafe-statics"
+				},
+
+				{
+					"name": "asm",
+					"type": "compiler",
+					"subtype": "asm",
+					"description": "GCC",
+					"programName": "${prefix}gcc${suffix}",
+					"options": ""
+				},
+
+				{
+					"name": "ld",
+					"type": "linker",
+					"subtype": "c",
+					"description": "GCC Linker",
+					"programName": "${prefix}gcc${suffix}",
+					"options": ""
+				},
+
+				{
+					"name": "ldpp",
+					"type": "linker",
+					"subtype": "c++",
+					"description": "G++ Linker",
+					"programName": "${prefix}g++${suffix}",
+					"options": ""
+				}
+			],
+
+			"nodes": [
+				{
+					"$include": "arm-none-eabi-gcc.json"
+				},
+
+				{
+					"name": "linaro",
+					"type": "toolchain",
+					"subType": "base",
+					"description": "Linaro GCC Base",
+					"nodes": [
+						{
+							"$include": "linaro-armv7-gcc.json"
+						},
+
+						{
+							"$include": "linaro-aarch64-gcc.json"
+						}
+					]
+				},
+
+				{
+					"$include": "osx-mp-gcc.json"
+				}
+			]
+		},
+
+		{
+			"name": "clang",
+			"type": "toolchain",
+			"subType": "base",
+			"description": "LLVM Clang Base",
+			"platform": "*",
+			"compiler": 
+			{
+				"fileExtentions": [
+					{
+						"object": "bc"
+					}
+				],
+
+				"options": 
+				{
+					"deps": "-MMD -MP",
+					"output": "-o \"$@\"",
+					"input": "\"$<\"",
+					"warning": "-Werror -Weverything -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-documentation-unknown-command",
+					"misc": "-emit-llvm -fsigned-char -fsigned-bitfields -fmessage-length=0 -c",
+					"preprocessor": "",
+					"debug": "-g",
+					"optimisation": "-O"
+				}
+			},
+
+			"linker": 
+			{
+				"options": 
+				{
+					"misc": "-native"
+				}
+			},
+
+			"tools": [
+				{
+					"name": "cc",
+					"type": "compiler",
+					"subtype": "c",
+					"description": "LLVM Clang",
+					"programName": "clang",
+					"standard": "-std=gnu99",
+					"options": ""
+				},
+
+				{
+					"name": "cpp",
+					"type": "compiler",
+					"subtype": "c++",
+					"description": "LLVM Clang++",
+					"programName": "clang++",
+					"standard": "-std=c++11",
+					"options": ""
+				},
+
+				{
+					"name": "asm",
+					"type": "compiler",
+					"subtype": "asm",
+					"description": "LLVM Clang",
+					"programName": "clang",
+					"options": ""
+				},
+
+				{
+					"name": "ld",
+					"type": "linker",
+					"subtype": "c",
+					"description": "LLVM Clang Linker",
+					"programName": "clang",
+					"options": ""
+				},
+
+				{
+					"name": "ldpp",
+					"type": "linker",
+					"subtype": "cpp",
+					"description": "LLVM Clang++ Linker",
+					"programName": "clang++",
+					"options": ""
+				}
+			],
+
+			"make": 
+			{
+				"variables": 
+				{
+					"objects": "BCS"
+				}
+			},
+
+			"nodes": [
+				{
+					"$include": "osx-clang.json"
+				}
+			]
+		}
+	]
+}
