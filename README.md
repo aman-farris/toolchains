@@ -17,4 +17,12 @@ includes the definitions of many GCC & Clang toolchains.
 * ilg/toolchain/gcc/linaro/aarch64/aarch64-linux-gnu/debug (release)
 * ilg/toolchain/gcc/linaro/aarch64/aarch64_be-linux-gnu/debug (release)
 
-* ilg/toolchain/gcc/arm-none-eabi/debug
+* ilg/toolchain/gcc/mp/4.9/32/debug (release)
+* ilg/toolchain/gcc/mp/4.9/64/debug (release)
+* ilg/toolchain/gcc/mp/5/32/debug (release)
+* ilg/toolchain/gcc/mp/5/64/debug (release)
+
+## Clang
+
+* ilg/toolchain/clang/osx/32/debug (release)
+* ilg/toolchain/clang/osx/64/debug (release)
