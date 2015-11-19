@@ -5,41 +5,43 @@
 			"name": "arm-none-eabi",
 			"type": "toolchain",
 			"subType": "base",
-			"description": "GNU ARM Embedded GCC Base",
+			"description": "GNU ARM Embedded GCC Family",
 			"platform": "*",
+			"compiler": 
+			{
+				"options": 
+				{
+					"optimisationLevel": 
+					{
+						"debug": "-Og",
+						"release": "-Os"
+					}
+				}
+			},
+
 			"tools": [
 				{
 					"name": "cc",
-					"type": "compiler",
-					"subtype": "c",
 					"description": "GNU ARM Embedded GCC"
 				},
 
 				{
 					"name": "cpp",
-					"type": "compiler",
-					"subtype": "c++",
 					"description": "GNU ARM Embedded G++"
 				},
 
 				{
 					"name": "asm",
-					"type": "compiler",
-					"subtype": "asm",
 					"description": "GNU ARM Embedded GCC"
 				},
 
 				{
 					"name": "ld",
-					"type": "linker",
-					"subtype": "c",
 					"description": "GNU ARM Embedded GCC Linker"
 				},
 
 				{
 					"name": "ldpp",
-					"type": "linker",
-					"subtype": "c++",
 					"description": "GNU ARM Embedded G++ Linker"
 				}
 			],
@@ -49,28 +51,14 @@
 					"name": "debug",
 					"type": "toolchain",
 					"subType": "debug",
-					"description": "GNU ARM Embedded GCC Debug",
-					"compiler": 
-					{
-						"options": 
-						{
-							"optimisation": "-Og"
-						}
-					}
+					"description": "GNU ARM Embedded GCC Debug"
 				},
 
 				{
 					"name": "release",
 					"type": "toolchain",
 					"subType": "release",
-					"description": "GNU ARM Embedded GCC Release",
-					"compiler": 
-					{
-						"options": 
-						{
-							"optimisation": "-Os"
-						}
-					}
+					"description": "GNU ARM Embedded GCC Release"
 				}
 			]
 		}

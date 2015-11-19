@@ -5,41 +5,31 @@
 			"name": "mp",
 			"type": "toolchain",
 			"subType": "base",
-			"description": "OS X MacPorts GCC Base",
+			"description": "OS X MacPorts GCC Family",
 			"platform": "Darwin",
 			"tools": [
 				{
 					"name": "cc",
-					"type": "compiler",
-					"subtype": "c",
 					"description": "OS X MacPorts GCC"
 				},
 
 				{
 					"name": "cpp",
-					"type": "compiler",
-					"subtype": "c++",
 					"description": "OS X MacPorts G++"
 				},
 
 				{
 					"name": "asm",
-					"type": "compiler",
-					"subtype": "asm",
 					"description": "OS X MacPorts GCC"
 				},
 
 				{
 					"name": "ld",
-					"type": "linker",
-					"subtype": "c",
 					"description": "OS X MacPorts GCC Linker"
 				},
 
 				{
 					"name": "ldpp",
-					"type": "linker",
-					"subtype": "c++",
 					"description": "OS X MacPorts G++ Linker"
 				}
 			],
@@ -49,7 +39,7 @@
 					"name": "4.9",
 					"type": "toolchain",
 					"subType": "base",
-					"description": "OS X MacPorts GCC 4.9 Base",
+					"description": "OS X MacPorts GCC 4.9 Family",
 					"substitutions": 
 					{
 						"suffix": "-mp-4.9"
@@ -60,7 +50,7 @@
 							"name": "32",
 							"type": "toolchain",
 							"subType": "base",
-							"description": "OS X MacPorts GCC 4.9 i386 Base",
+							"description": "OS X MacPorts GCC 4.9 i386 Family",
 							"compiler": 
 							{
 								"cpu": "-m32"
@@ -71,28 +61,14 @@
 									"name": "debug",
 									"type": "toolchain",
 									"subType": "debug",
-									"description": "OS X MacPorts GCC 4.9 i386 Debug",
-									"compiler": 
-									{
-										"options": 
-										{
-											"optimisation": "-Og"
-										}
-									}
+									"description": "OS X MacPorts GCC 4.9 i386 Debug"
 								},
 
 								{
 									"name": "release",
 									"type": "toolchain",
 									"subType": "release",
-									"description": "OS X MacPorts GCC 4.9 i386 Release",
-									"compiler": 
-									{
-										"options": 
-										{
-											"optimisation": "-O3"
-										}
-									}
+									"description": "OS X MacPorts GCC 4.9 i386 Release"
 								}
 							]
 						},
@@ -101,7 +77,7 @@
 							"name": "64",
 							"type": "toolchain",
 							"subType": "base",
-							"description": "OS X MacPorts GCC 4.9 x86_64 Base",
+							"description": "OS X MacPorts GCC 4.9 x86_64 Family",
 							"compiler": 
 							{
 								"cpu": "-m64"
@@ -112,28 +88,14 @@
 									"name": "debug",
 									"type": "toolchain",
 									"subType": "debug",
-									"description": "OS X MacPorts GCC 4.9 x86_64 Debug",
-									"compiler": 
-									{
-										"options": 
-										{
-											"optimisation": "-Og"
-										}
-									}
+									"description": "OS X MacPorts GCC 4.9 x86_64 Debug"
 								},
 
 								{
 									"name": "release",
 									"type": "toolchain",
 									"subType": "release",
-									"description": "OS X MacPorts GCC 4.9 x86_64 Release",
-									"compiler": 
-									{
-										"options": 
-										{
-											"optimisation": "-O3"
-										}
-									}
+									"description": "OS X MacPorts GCC 4.9 x86_64 Release"
 								}
 							]
 						}
@@ -144,7 +106,7 @@
 					"name": "5",
 					"type": "toolchain",
 					"subType": "base",
-					"description": "OS X MacPorts GCC 5 Base",
+					"description": "OS X MacPorts GCC 5 Family",
 					"substitutions": 
 					{
 						"suffix": "-mp-5"
@@ -155,7 +117,7 @@
 							"name": "32",
 							"type": "toolchain",
 							"subType": "base",
-							"description": "OS X MacPorts GCC 5 i386 Base",
+							"description": "OS X MacPorts GCC 5 i386 Family",
 							"compiler": 
 							{
 								"cpu": "-m32"
@@ -166,28 +128,14 @@
 									"name": "debug",
 									"type": "toolchain",
 									"subType": "debug",
-									"description": "OS X MacPorts GCC 5 i386 Debug",
-									"compiler": 
-									{
-										"options": 
-										{
-											"optimisation": "-Og"
-										}
-									}
+									"description": "OS X MacPorts GCC 5 i386 Debug"
 								},
 
 								{
 									"name": "release",
 									"type": "toolchain",
 									"subType": "release",
-									"description": "OS X MacPorts GCC 5 i386 Release",
-									"compiler": 
-									{
-										"options": 
-										{
-											"optimisation": "-O3"
-										}
-									}
+									"description": "OS X MacPorts GCC 5 i386 Release"
 								}
 							]
 						},
@@ -196,7 +144,7 @@
 							"name": "64",
 							"type": "toolchain",
 							"subType": "base",
-							"description": "OS X MacPorts GCC 5 x86_64 Base",
+							"description": "OS X MacPorts GCC 5 x86_64 Family",
 							"compiler": 
 							{
 								"cpu": "-m64"
@@ -207,28 +155,14 @@
 									"name": "debug",
 									"type": "toolchain",
 									"subType": "debug",
-									"description": "OS X MacPorts GCC 5 x86_64 Debug",
-									"compiler": 
-									{
-										"options": 
-										{
-											"optimisation": "-Og"
-										}
-									}
+									"description": "OS X MacPorts GCC 5 x86_64 Debug"
 								},
 
 								{
 									"name": "release",
 									"type": "toolchain",
 									"subType": "release",
-									"description": "OS X MacPorts GCC 5 x86_64 Release",
-									"compiler": 
-									{
-										"options": 
-										{
-											"optimisation": "-O3"
-										}
-									}
+									"description": "OS X MacPorts GCC 5 x86_64 Release"
 								}
 							]
 						}

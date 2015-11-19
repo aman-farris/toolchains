@@ -5,7 +5,7 @@
 			"name": "gcc",
 			"type": "toolchain",
 			"subType": "base",
-			"description": "GCC Base",
+			"description": "GCC Family",
 			"platform": "*",
 			"compiler": 
 			{
@@ -20,11 +20,27 @@
 					"deps": "-MMD -MP",
 					"output": "-o \"$@\"",
 					"input": "\"$<\"",
-					"warning": "-Wall -Wextra -Werror -Wabi",
-					"other": "-fsigned-char -fsigned-bitfields -fmessage-length=0 -c -ffunction-sections -fdata-sections",
 					"preprocessor": "",
-					"debug": "-g",
-					"optimisation": "-O"
+					"targetProcessor": "",
+					"optimisationLevel": 
+					{
+						"debug": "-Og",
+						"release": "-O3"
+					},
+
+					"optimisationOther": 
+					{
+						"all": "-fmessage-length=0 -fsigned-char -fsigned-bitfields -ffunction-sections -fdata-sections",
+						"debug": "-fno-move-loop-invariants"
+					},
+
+					"warnings": "-Wall -Wextra",
+					"other": "-c",
+					"debugging": 
+					{
+						"debug": "-g3",
+						"release": "-g"
+					}
 				}
 			},
 
@@ -51,8 +67,17 @@
 					"subtype": "c",
 					"description": "GCC",
 					"programName": "${prefix}gcc${suffix}",
-					"standard": "-std=gnu99",
-					"options": ""
+					"standard": "-std=gnu11",
+					"options": 
+					{
+						"warnings": 
+						{
+							"all": 
+							{
+								"append": "-Wmissing-prototypes -Wstrict-prototypes -Wbad-function-cast"
+							}
+						}
+					}
 				},
 
 				{
@@ -61,8 +86,25 @@
 					"subtype": "c++",
 					"description": "G++",
 					"programName": "${prefix}g++${suffix}",
-					"standard": "-std=c++11",
-					"options": "-Wabi -fno-use-cxa-atexit -fno-threadsafe-statics"
+					"standard": "-std=gnu++11",
+					"options": 
+					{
+						"warnings": 
+						{
+							"all": 
+							{
+								"append": "-Wabi -Wctor-dtor-privacy -Wnoexcept -Wnon-virtual-dtor -Wstrict-null-sentinel -Wsign-promo"
+							}
+						},
+
+						"optimisationOther": 
+						{
+							"all": 
+							{
+								"append": "-fabi-version=0"
+							}
+						}
+					}
 				},
 
 				{
@@ -70,8 +112,7 @@
 					"type": "compiler",
 					"subtype": "asm",
 					"description": "GCC",
-					"programName": "${prefix}gcc${suffix}",
-					"options": ""
+					"programName": "${prefix}gcc${suffix}"
 				},
 
 				{
@@ -79,8 +120,7 @@
 					"type": "linker",
 					"subtype": "c",
 					"description": "GCC Linker",
-					"programName": "${prefix}gcc${suffix}",
-					"options": ""
+					"programName": "${prefix}gcc${suffix}"
 				},
 
 				{
@@ -88,8 +128,7 @@
 					"type": "linker",
 					"subtype": "c++",
 					"description": "G++ Linker",
-					"programName": "${prefix}g++${suffix}",
-					"options": ""
+					"programName": "${prefix}g++${suffix}"
 				}
 			],
 
@@ -102,7 +141,7 @@
 					"name": "linaro",
 					"type": "toolchain",
 					"subType": "base",
-					"description": "Linaro GCC Base",
+					"description": "Linaro GCC Family",
 					"nodes": [
 						{
 							"$include": "linaro-armv7-gcc.json"
@@ -124,7 +163,7 @@
 			"name": "clang",
 			"type": "toolchain",
 			"subType": "base",
-			"description": "LLVM Clang Base",
+			"description": "LLVM Clang Family",
 			"platform": "*",
 			"compiler": 
 			{
@@ -139,11 +178,22 @@
 					"deps": "-MMD -MP",
 					"output": "-o \"$@\"",
 					"input": "\"$<\"",
-					"warning": "-Werror -Weverything -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-documentation-unknown-command",
-					"misc": "-emit-llvm -fsigned-char -fsigned-bitfields -fmessage-length=0 -c",
 					"preprocessor": "",
-					"debug": "-g",
-					"optimisation": "-O"
+					"targetProcessor": "",
+					"optimisationLevel": 
+					{
+						"debug": "-O0",
+						"release": "-O3"
+					},
+
+					"optimisationOther": 
+					{
+						"all": "-fmessage-length=0 -fsigned-char -fsigned-bitfields -ffunction-sections -fdata-sections"
+					},
+
+					"warnings": "-Werror -Weverything -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-documentation-unknown-command",
+					"misc": "-emit-llvm -c",
+					"debugging": "-g"
 				}
 			},
 
@@ -162,7 +212,7 @@
 					"subtype": "c",
 					"description": "LLVM Clang",
 					"programName": "clang",
-					"standard": "-std=gnu99",
+					"standard": "-std=gnu11",
 					"options": ""
 				},
 

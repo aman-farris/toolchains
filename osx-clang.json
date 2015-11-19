@@ -5,41 +5,31 @@
 			"name": "osx",
 			"type": "toolchain",
 			"subType": "base",
-			"description": "OS X Apple LLVM Clang Base",
+			"description": "OS X Apple LLVM Clang Family",
 			"platform": "Darwin",
 			"tools": [
 				{
 					"name": "cc",
-					"type": "compiler",
-					"subtype": "c",
 					"description": "Apple LLVM Clang"
 				},
 
 				{
 					"name": "cpp",
-					"type": "compiler",
-					"subtype": "c++",
 					"description": "Apple LLVM Clang++"
 				},
 
 				{
 					"name": "asm",
-					"type": "compiler",
-					"subtype": "asm",
 					"description": "Apple LLVM Clang"
 				},
 
 				{
 					"name": "ld",
-					"type": "linker",
-					"subtype": "c",
 					"description": "Apple LLVM Clang Linker"
 				},
 
 				{
 					"name": "ldpp",
-					"type": "linker",
-					"subtype": "cpp",
 					"description": "Apple LLVM Clang++ Linker"
 				}
 			],
@@ -49,7 +39,7 @@
 					"name": "32",
 					"type": "toolchain",
 					"subType": "base",
-					"description": "OS X Apple LLVM i386 Base",
+					"description": "OS X Apple LLVM i386 Family",
 					"compiler": 
 					{
 						"cpu": "-m32"
@@ -60,28 +50,14 @@
 							"name": "debug",
 							"type": "toolchain",
 							"subType": "debug",
-							"description": "OS X Apple LLVM i386 Debug",
-							"compiler": 
-							{
-								"options": 
-								{
-									"optimisation": "-O0"
-								}
-							}
+							"description": "OS X Apple LLVM i386 Debug"
 						},
 
 						{
 							"name": "release",
 							"type": "toolchain",
 							"subType": "release",
-							"description": "OS X Apple LLVM i386 Release",
-							"compiler": 
-							{
-								"options": 
-								{
-									"optimisation": "-O3"
-								}
-							}
+							"description": "OS X Apple LLVM i386 Release"
 						}
 					]
 				},
@@ -90,7 +66,7 @@
 					"name": "64",
 					"type": "toolchain",
 					"subType": "base",
-					"description": "OS X Apple LLVM x86_64 Base",
+					"description": "OS X Apple LLVM x86_64 Family",
 					"compiler": 
 					{
 						"cpu": "-m64"
@@ -101,28 +77,14 @@
 							"name": "debug",
 							"type": "toolchain",
 							"subType": "debug",
-							"description": "OS X Apple LLVM x86_64 Debug",
-							"compiler": 
-							{
-								"options": 
-								{
-									"optimisation": "-O0"
-								}
-							}
+							"description": "OS X Apple LLVM x86_64 Debug"
 						},
 
 						{
 							"name": "release",
 							"type": "toolchain",
 							"subType": "release",
-							"description": "OS X Apple LLVM x86_64 Release",
-							"compiler": 
-							{
-								"options": 
-								{
-									"optimisation": "-O3"
-								}
-							}
+							"description": "OS X Apple LLVM x86_64 Release"
 						}
 					]
 				}
