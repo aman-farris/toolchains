@@ -2,6 +2,7 @@
 	"$schema": "http://xcdl.github.io/schemas/xpack-1-1.json",
 	"name": "/ilg/toolchain",
 	"description": "Toolchain definitions.",
+	"xcdlFile": "toolchains.json",
 	"repository": 
 	{
 		"type": "git",
