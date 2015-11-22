@@ -1,41 +1,32 @@
 {
-	"name": "ilg-xcdl-toolchains",
-	"version": "0.1.0",
-	"description": "XCDL Toolchains definitions.",
-	"keywords": [
-		"xpack",
-		"xcdl",
-		"toolchain",
-		"gnu",
-		"gcc",
-		"llvm",
-		"clang",
-		"c",
-		"c++"
-	],
-
-	"author": "Liviu Ionescu <ilg@livius.net>",
-	"homepage": "https://github.com/xpacks/toolchains",
-	"repository": 
-	{
-		"url": "git@github.com:xpacks/toolchains.git",
-		"type": "git"
-	},
-
-	"bugs": 
-	{
-		"url": "https://github.com/xpacks/toolchains/issues"
-	},
-
-	"licenses": [
-		{
-			"url": "https://spdx.org/licenses/LGPL-3.0.html",
-			"type": "LGPL-3.0"
-		}
-	],
-
-	"dependencies": 
-	{
-		
-	}
+  "name": "ilg-xcdl-toolchains",
+  "version": "0.1.1",
+  "description": "XCDL Toolchains definitions.",
+  "keywords": [
+    "xpack",
+    "xcdl",
+    "toolchain",
+    "gnu",
+    "gcc",
+    "llvm",
+    "clang",
+    "c",
+    "c++"
+  ],
+  "author": "Liviu Ionescu <ilg@livius.net>",
+  "homepage": "https://github.com/xpacks/toolchains",
+  "repository": {
+    "url": "git@github.com:xpacks/toolchains.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/xpacks/toolchains/issues"
+  },
+  "licenses": [
+    {
+      "url": "https://spdx.org/licenses/LGPL-3.0.html",
+      "type": "LGPL-3.0"
+    }
+  ],
+  "dependencies": {}
 }
