@@ -1,5 +1,9 @@
 {
 	"$schema": "http://xcdl.github.io/schemas/xcdl-1-1.json",
+	"name": "/ilg/toolchain",
+	"description": "Toolchain definitions.",
+	"type": "toolchain",
+	"subType": "base",
 	"nodes": [
 		{
 			"name": "gcc",

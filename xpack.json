@@ -1,7 +1,7 @@
 {
 	"$schema": "http://xcdl.github.io/schemas/xpack-1-1.json",
-	"name": "/ilg/toolchain",
-	"description": "Toolchain definitions.",
+	"name": "ilg-xcdl-toolchains",
+	"description": "XCDL Toolchains definitions.",
 	"xcdlFile": "toolchains.json",
 	"repository": 
 	{
@@ -9,18 +9,19 @@
 		"url": "https://github.com/xpacks/toolchains.git"
 	},
 
+	"version": "0.1.2",
 	"releases": [
 		{
-			"version": "1.1.1",
+			"version": "1.0.0",
 			"description": "Initial release.",
 			"archives": [
-				"http://gnuarmeclipse.sourceforge.net/xpacks/toolchains/1.1.1.zip",
-				"https://github.com/xpacks/stm32/archive/1.1.1.zip"
+				"https://registry.yottabuild.org/modules/ilg-xcdl-toolchains/versions/1.0.0/tarball",
+				"https://github.com/xpacks/toolchains/archive/v1.0.0.zip"
 			],
 
 			"repository": 
 			{
-				"tag": "1.1.1"
+				"tag": "v1.0.0"
 			}
 		}
 	],
