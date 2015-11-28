@@ -39,6 +39,7 @@
 	"homepage": "https://github.com/xpacks/toolchains",
 	"bugs": [
 		{
+			"version": "0.1.3",
 			"url": "https://github.com/xpacks/toolchains/issues"
 		}
 	],

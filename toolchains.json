@@ -52,7 +52,7 @@
 			{
 				"options": 
 				{
-					"other": "-Wl,--gc-sections -Wl,-Map,map.txt -Wl,--cref -nostartfiles"
+					"other": "-Wl,--gc-sections -Wl,-Map,map.txt -Wl,--cref"
 				}
 			},
 
